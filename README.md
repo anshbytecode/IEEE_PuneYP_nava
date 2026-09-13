@@ -36,3 +36,5 @@ To provide a scalable and engaging digital platform for IEEE Young Professionals
 
 https://ieeepuneyp.vercel.app/
 
+https://ieeeyppunesection.vercel.app/
+
