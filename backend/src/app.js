@@ -41,7 +41,22 @@ const apiLimiter = rateLimit({
 });
 app.use('/api/', apiLimiter);
 
-// Health check endpoint
+// Health check & Root endpoints
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'IEEE Pune Section YP Backend API is running.',
+    endpoints: {
+      health: '/api/health',
+      events: '/api/events',
+      team: '/api/team',
+      blogs: '/api/blogs',
+      announcements: '/api/announcements'
+    },
+    timestamp: new Date()
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, status: 'OK', timestamp: new Date() });
 });
